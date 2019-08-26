@@ -1,6 +1,9 @@
 'use strict'
 
-const router = require('express').Router()
+const router = require('express').Router();
+
+// router.use(express.json()); /***** */
+router.use('/candies', require('./candies'));
 
 // Your routes go here!
 // NOTE: Any routes that you put here are ALREADY mounted on `/api`
@@ -23,5 +26,7 @@ router.use((req, res, next) => {
   err.status = 404
   next(err)
 })
+
+
 
 module.exports = router
